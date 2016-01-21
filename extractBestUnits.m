@@ -8,25 +8,25 @@ function [ bestUnits ] = extractBestUnits( units )
 experimentIDs = [1 2 4]; % no obj-fix
 objectIDs = [1:4];
 
-emptyExpUnit = []
+emptyExpUnit = [];
 
 for j=units,
     
     unitFileName = setUnitName(j);
      
     unitStr = strcat('~/DATA/', unitFileName);
-    unit = load(unitStr{1,1})
+    unit = load(unitStr{1,1});
         
     for i=experimentIDs,
        for ii=objectIDs,
            if isempty(unit.data.spikes{i, ii}) 
-               emptyExpUnit = [emptyExpUnit j]
+               emptyExpUnit = [emptyExpUnit j];
            end
        end
     end
 end
 
-bestUnits = setdiff(units, unique(emptyExpUnit))
+bestUnits = setdiff(units, unique(emptyExpUnit));
 
 end
 
