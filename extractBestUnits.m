@@ -3,11 +3,13 @@ function [ bestUnits ] = extractBestUnits( units )
 % Date: 21/01/2016
 % Description: Extract best units from available data set
 % Notes: 0- Object fixation experiment excluded.
+%        1- This function will run only one time.
 
 experimentIDs = [1 2 4]; % no obj-fix
 objectIDs = [1:4];
 
 emptyExpUnit = []
+
 for j=units,
     
     unitFileName = setUnitName(j);
@@ -22,7 +24,6 @@ for j=units,
            end
        end
     end
-       
 end
 
 bestUnits = setdiff(units, unique(emptyExpUnit))
