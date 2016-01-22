@@ -4,7 +4,7 @@ function [ w, yPred, errorTraining ] = extractRegParams( x, y)
 % Description: get training weight, prediction vector and 
 %              training errors for specifc unit.
 
-w = pinv(x, y);
+w = pinv( (x' * x) ) * x' * y;
 yPred = x * w;
 errorTraining = abs(y-yPred);
 
