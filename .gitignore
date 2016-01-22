@@ -2,3 +2,4 @@
 DATA/
 *.mat
 *.log
+.DS_Store
