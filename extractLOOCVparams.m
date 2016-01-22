@@ -39,9 +39,8 @@ for i=1 : rowNum,
     
     testPredY = testX * trW;
     trError = abs(testY-testPredY);
-    
-    
-    % test error will be evaluated my performance metrics
+        
+    % test error will be evaluated by performance metrics
     testError(i, 1) = trError;
     
     % log the error to calculate mean
