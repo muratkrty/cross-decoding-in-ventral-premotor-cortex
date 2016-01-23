@@ -19,7 +19,12 @@ function [ absMetric, relMetric ] = extractDecodingMetrics(decTreshold, testErr,
                  length(find(objTest(4, :) <= decTreshold))];
    
     % extract absolute/relative perfomance metric values for each object
-    relMetric = 100/testSize * absMetric';
+    if sum(absMetric) == 0,
+        relMetric =  absMetric';
+    else
+        relMetric = 100/sum(absMetric) * absMetric'; 
+    end
+    
     absMetric = 100/objLen * absMetric';
 
 end
