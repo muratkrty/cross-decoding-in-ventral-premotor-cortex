@@ -1,5 +1,6 @@
 *~
 DATA/
+abstract/
 *.mat
 *.log
 .DS_Store
