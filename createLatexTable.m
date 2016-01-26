@@ -8,13 +8,18 @@ tableChr = '&';
 tableEnd = '\\ \hline';
 
 for i = 1 : row,
-   for ii = 1 : col,
-       if ii == col,
-           rUnitsCell{i, ii} = strcat(rUnitsCell{i, ii}, tableEnd);
-       else
-           rUnitsCell{i, ii} = strcat(rUnitsCell{i, ii}, tableChr); 
-       end
-   end
+    tmp = strcat(int2str(i), tableChr);
+    for ii = 1 : col,
+        if ii == 1,
+            rUnitsCell{i, ii} = strcat(tmp, rUnitsCell{i, ii});
+        end
+            if ii == col,
+                rUnitsCell{i, ii} = strcat(rUnitsCell{i, ii}, tableEnd);
+            else
+                rUnitsCell{i, ii} = strcat(rUnitsCell{i, ii}, tableChr);
+            end
+        end
+    
 end
 end
 
