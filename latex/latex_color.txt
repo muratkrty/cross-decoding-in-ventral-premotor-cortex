@@ -1,8 +1,6 @@
 \cellcolor{Apricot}
 \cellcolor{Aquamarine}
 \cellcolor{Bittersweet}
-\cellcolor{Black}
-\cellcolor{Blue}
 \cellcolor{BlueGreen}
 \cellcolor{BlueViolet}
 \cellcolor{BrickRed}
@@ -20,7 +18,6 @@
 \cellcolor{Fuchsia}
 \cellcolor{Goldenrod}
 \cellcolor{Gray}
-\cellcolor{Green}
 \cellcolor{GreenYellow}
 \cellcolor{JungleGreen}
 \cellcolor{Lavender}
@@ -43,7 +40,6 @@
 \cellcolor{ProcessBlue}
 \cellcolor{Purple}
 \cellcolor{RawSienna}
-\cellcolor{Red}
 \cellcolor{RedOrange}
 \cellcolor{RedViolet}
 \cellcolor{Rhodamine}
