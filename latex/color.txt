@@ -51,7 +51,6 @@ RoyalBlue
 RoyalPurple
 RubineRed
 Salmon
-
 Sepia
 SkyBlue
 SpringGreen
