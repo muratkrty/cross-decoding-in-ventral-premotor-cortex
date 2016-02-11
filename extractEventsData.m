@@ -1,4 +1,4 @@
-function [ movementData, graspingData ] = extractEventsData( bestUnits, movementInd, graspingInd )
+function [ movementData, graspingData, cueData ] = extractEventsData( bestUnits, movementInd, graspingInd, cueInd )
 % Author: Murat Kirtay, The BioRobotics Inst.
 % Date: 21/01/2016
 % Description: Extract onmove and grasping event data for specified index
@@ -16,26 +16,27 @@ objectIDs = [1:4];
 ind = 1;
 
 for j = bestUnits,
-        
+    
     unitFileName = setUnitName(j);
   
     unitStr = strcat('~/DATA/', unitFileName);
     unit = load(unitStr{1,1});
     onMoveData = cell(size(experimentIDs,2), size(objectIDs,2));
     graspedData = cell(size(experimentIDs,2), size(objectIDs,2));
+    cuedData = cell(size(experimentIDs,2), size(objectIDs,2));
     
     for i=experimentIDs,
         for ii=objectIDs,
             onMoveData{i,ii} = unit.data.spikes{i,ii}(:, movementInd(1):movementInd(2)-1);
             graspedData{i,ii} = unit.data.spikes{i,ii}(:, graspingInd(1):graspingInd(2)-1);
+            cuedData{i,ii} = unit.data.spikes{i,ii}(:, cueInd(1):cueInd(2)-1);
          end
     end
     
     movementData{1, ind} = onMoveData;
     graspingData{1, ind} = graspedData;
+    cueData{1, ind} = cuedData;
     ind = ind + 1;
-    
 end
-
 end
 
